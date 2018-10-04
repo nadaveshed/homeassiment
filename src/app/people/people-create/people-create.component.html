@@ -1,0 +1,45 @@
+<mat-card>
+  <form (submit)="onAddPeople(peopleForm)" #peopleForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="name"
+        ngModel
+        required
+        minlength="3"
+        placeholder="People name"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid">Please enter the people name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="email"
+        ngModel
+        required
+        placeholder="People email"
+        #email="ngModel"></textarea>
+      <mat-error *ngIf="email.invalid">Please enter the people email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-radio-button value="1">Male</mat-radio-button>
+      <mat-radio-button value="2">Female</mat-radio-button>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="phone"
+        ngModel
+        placeholder="People phone"
+        #phone="ngModel"></textarea>
+      <mat-error *ngIf="phone.invalid">Please enter the people phone number.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Save People</button>
+  </form>
+</mat-card>

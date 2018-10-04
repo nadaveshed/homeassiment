@@ -1,0 +1,15 @@
+<mat-accordion multi="true" *ngIf="peoples.length > 0">
+  <mat-expansion-panel *ngFor="let people of peoples">
+    <mat-expansion-panel-header>
+      {{ people.name }}
+    </mat-expansion-panel-header>
+    <p>{{ people.email }}</p>
+    <p>{{ people.gender }}</p>
+    <p>{{ people.phone }}</p>
+    <mat-action-row>
+      <button mat-button color="primary">EDIT</button>
+      <button mat-button color="warn" (click)="onDelete(people.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="peoples.length <= 0">No peoples added yet!</p>
